@@ -56,4 +56,15 @@ void imprimirTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
     }
 }
 
+int main() {
+    int tabuleiro[TAMANHO][TAMANHO];
+    srand(time(NULL)); // Inicializa a semente do gerador de números aleatórios
+
+    inicializarTabuleiro(tabuleiro);
+
+    // Posiciona dois navios horizontais ou verticais
+    for (int i = 0; i < 2; i++) {
+        posicionarNavio(tabuleiro, 0);
+    }
+
 
