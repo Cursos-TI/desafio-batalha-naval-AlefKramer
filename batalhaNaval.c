@@ -29,3 +29,19 @@ int podePosicionar(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int d
     return 1;
 }
 
+// Função para posicionar um navio no tabuleiro
+void posicionarNavio(int tabuleiro[TAMANHO][TAMANHO], int diagonal) {
+    int linha, coluna, direcao;
+    do {
+        linha = rand() % TAMANHO;
+        coluna = rand() % TAMANHO;
+        direcao = rand() % 2; // 0 = horizontal, 1 = vertical
+    } while (!podePosicionar(tabuleiro, linha, coluna, direcao, diagonal));
+
+    for (int i = 0; i < TAM_NAVIO; i++) {
+        int x = linha + (diagonal ? i : (direcao == 1 ? i : 0));
+        int y = coluna + (diagonal ? i : (direcao == 0 ? i : 0));
+        tabuleiro[x][y] = NAVIO;
+    }
+}
+
