@@ -15,3 +15,17 @@ void inicializarTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
         }
     }
 }
+
+// Função para verificar se um navio pode ser posicionado sem sobreposição
+int podePosicionar(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int direcao, int diagonal) {
+    for (int i = 0; i < TAM_NAVIO; i++) {
+        int x = linha + (diagonal ? i : (direcao == 1 ? i : 0));
+        int y = coluna + (diagonal ? i : (direcao == 0 ? i : 0));
+        
+        if (x >= TAMANHO || y >= TAMANHO || tabuleiro[x][y] != 0) {
+            return 0; // Não pode posicionar
+        }
+    }
+    return 1;
+}
+
