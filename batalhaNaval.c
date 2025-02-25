@@ -45,3 +45,15 @@ void posicionarNavio(int tabuleiro[TAMANHO][TAMANHO], int diagonal) {
     }
 }
 
+// Função para imprimir o tabuleiro
+void imprimirTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
+    printf("\nTabuleiro:\n");
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+
