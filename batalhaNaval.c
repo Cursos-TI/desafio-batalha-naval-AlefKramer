@@ -67,4 +67,13 @@ int main() {
         posicionarNavio(tabuleiro, 0);
     }
 
+    // Posiciona dois navios diagonais
+    for (int i = 0; i < 2; i++) {
+    posicionarNavio(tabuleiro, 1);
+    }
+
+    imprimirTabuleiro(tabuleiro);
+    return 0;
+}
+
 
